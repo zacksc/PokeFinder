@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function App() {
   const [image, setImage] = useState("");
   const [id, setId] = useState("");
-const [name, setName] = useState("");
+  const [name, setName] = useState("");
 
   const fetchCharacter = async () => {
     try {
@@ -12,7 +12,7 @@ const [name, setName] = useState("");
       );
       const data = await response.json();
       setImage(data.sprites.front_default || "https://via.placeholder.com/150");
-     setName(data.name)
+      setName(data.name)
     } catch {
       alert("Algo deu errado! Tente outro ID.");
     }
@@ -20,7 +20,7 @@ const [name, setName] = useState("");
 
   return (
     <div>
-     <h1>{name}</h1>
+      <h1>{name}</h1>
       <img src={image} alt="Personagem" />
       <input
         type="text"
