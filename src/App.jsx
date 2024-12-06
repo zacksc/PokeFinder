@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import templateImage from './assets/pokeball.gif'
 
 function App() {
   const [image, setImage] = useState("");
@@ -11,7 +12,7 @@ function App() {
         `https://pokeapi.co/api/v2/pokemon/${id}`
       );
       const data = await response.json();
-      setImage(data.sprites.front_default || "https://via.placeholder.com/150");
+      setImage(data.sprites.front_default);
       setName(data.name)
     } catch {
       alert("Algo deu errado! Tente outro ID.");
@@ -19,16 +20,19 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>{name}</h1>
-      <img src={image} alt="Personagem" />
-      <input
+    <div className="card text-center text-dark bg-success-subtle mb-3">
+      <h1 className="card-title">{name}</h1>
+      <img src={image || templateImage} alt={name} className="card-img-top" />
+      <section className="input-group">
+        <input
+        className="form-control"
         type="text"
         value={id}
         onChange={(e) => setId(e.target.value)}
         placeholder="Digite o ID ou nome"
       />
-      <button onClick={fetchCharacter}>Buscar</button>
+      <button className="btn btn-success" onClick={fetchCharacter}><i className="fa fa-search"></i></button>
+      </section>
     </div>
   );
 }
