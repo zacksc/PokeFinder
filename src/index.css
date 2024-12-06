@@ -16,6 +16,11 @@ body {
 .bg-success-subtle{
   --bs-bg-opacity: 0.8;
 }
+.titulo{
+  font-family: "Press Start 2P", system-ui;
+  display: flex;
+  justify-content: center;
+}
 .card-title{
   font-family: "Press Start 2P", system-ui;
   font-size: 20px;

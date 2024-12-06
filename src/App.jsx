@@ -20,6 +20,8 @@ function App() {
   };
 
   return (
+    <div>
+      <h1 className="titulo">PokeFinder</h1>
     <div className="card text-center text-dark bg-success-subtle mb-3">
       <h1 className="card-title">{name}</h1>
       <img src={image || templateImage} alt={name} className="card-img-top" />
@@ -33,6 +35,7 @@ function App() {
       />
       <button className="btn btn-success" onClick={fetchCharacter}><i className="fa fa-search"></i></button>
       </section>
+    </div>
     </div>
   );
 }
